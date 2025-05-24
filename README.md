@@ -1,1 +1,1 @@
-In this repository there are: first, second, third, fourth and fifth homework. 
+In this repository there are all of the homework assignments. 
