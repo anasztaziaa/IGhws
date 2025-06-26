@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Street Crossing</title>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three":                         "https://unpkg.com/three@0.158.0/build/three.module.js",
+      "three/examples/jsm/loaders/GLTFLoader.js":
+                                       "https://unpkg.com/three@0.158.0/examples/jsm/loaders/GLTFLoader.js",
+      "three/examples/jsm/controls/OrbitControls.js":
+                                       "https://unpkg.com/three@0.158.0/examples/jsm/controls/OrbitControls.js"
+    }
+  }
+  </script>
+
+  <style>
+    body, html { margin:0; overflow:hidden; }
+    #overlay {
+      position:absolute; top:10px; left:10px;
+      font-family:sans-serif; color:#fff; z-index:10;
+      user-select:none;
+    }
+    #overlay label { display:block; }
+    #overlay input { transform:scale(1.3); margin-right:6px; }
+
+    /* Style for the goal message + button */
+    #goalMsg {
+      display: none;
+      position: fixed;
+      top: 35%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 2.3rem;
+      color: #222;
+      text-shadow: 1px 1px 8px #fff, 0 0 16px #ffe;
+      font-family: sans-serif;
+      z-index: 50;
+      pointer-events: none;
+      background: rgba(255,255,255,0.02);
+    }
+    #goalMsgInner {
+      display: inline-block;
+      background: rgba(255,255,200,0.92);
+      padding: 36px 48px 28px 48px;
+      border-radius: 18px;
+      box-shadow: 0 4px 28px 0 #eedf7a88;
+      pointer-events: auto;
+      min-width: 250px;
+    }
+    #goalMsgText {
+      display: block;
+      font-size: 2.3rem;
+      margin-bottom: 28px;
+      font-weight: 700;
+    }
+    #playAgainBtn {
+      font-size: 1.3rem;
+      padding: 10px 38px;
+      border-radius: 8px;
+      border: none;
+      background: #ffee00;
+      color: #222;
+      box-shadow: 1px 1px 8px #fff;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.18s;
+    }
+    #playAgainBtn:hover {
+      background: #ffe54e;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="overlay">
+    <label><input type="checkbox" id="night"> Night Mode</label>
+  </div>
+  <div id="goalMsg">
+    <span id="goalMsgInner">
+      <span id="goalMsgText">You reached the goal!</span>
+      <button id="playAgainBtn">Play again</button>
+    </span>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
